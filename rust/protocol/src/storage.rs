@@ -7,8 +7,8 @@
 
 #![warn(missing_docs)]
 
-mod inmem;
-mod traits;
+pub mod inmem;
+pub mod traits;
 
 pub use inmem::{
     InMemIdentityKeyStore, InMemKyberPreKeyStore, InMemPreKeyStore, InMemSenderKeyStore,

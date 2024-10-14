@@ -676,6 +676,14 @@ impl From<u32> for DeviceId {
     }
 }
 
+impl DeviceId {
+    pub fn from_string(s: &str) -> Self {
+        let length = s.len() as u32;
+        let hash = s.chars().fold(0u32, |acc, c| acc.wrapping_add(c as u32));
+        Self(length.wrapping_add(hash))
+    }
+}
+
 impl From<DeviceId> for u32 {
     fn from(value: DeviceId) -> Self {
         value.0

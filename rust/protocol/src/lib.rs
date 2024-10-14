@@ -39,13 +39,12 @@ mod sender_keys;
 mod session;
 mod session_cipher;
 mod state;
-mod storage;
+pub mod storage;
 mod timestamp;
 mod utils;
 
 pub use curve::{KeyPair, PrivateKey, PublicKey};
-use error::Result;
-pub use error::SignalProtocolError;
+pub use error::{Result, SignalProtocolError};
 pub use fingerprint::{DisplayableFingerprint, Fingerprint, ScannableFingerprint};
 pub use group_cipher::{
     create_sender_key_distribution_message, group_decrypt, group_encrypt,
